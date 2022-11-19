@@ -1,0 +1,19 @@
+.outer {
+  max-width: 20em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.header h1 {
+  margin: -0.25em 0 0.1em 0;
+  font-weight: 100;
+  font-size: 4em;
+}
+
+.main {
+  border-top: 1px solid black;
+  padding-top: 1em;
+}
+.main:last-of-type {
+  border-bottom: 1px solid black;
+}

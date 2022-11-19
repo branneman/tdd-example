@@ -1,0 +1,38 @@
+.todo__list {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.todo__item {
+  display: flex;
+  margin-bottom: 1em;
+  list-style: none;
+  font-size: 1.4em;
+}
+.todo__item p {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.todo__remove {
+  cursor: pointer;
+
+  /* Generic reset-button styles */
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: inherit;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+.todo__remove::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
