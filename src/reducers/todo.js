@@ -1,3 +1,5 @@
+import { remove } from 'util/array'
+
 function reducer(state, action) {
   switch (action.type) {
     case 'add':
@@ -6,9 +8,7 @@ function reducer(state, action) {
       return [newItem].concat(state)
 
     case 'remove':
-      const newState = state.slice() // clone because splice() mutates
-      newState.splice(action.payload, 1) // splice() returns the removed elements
-      return newState
+      return remove(action.payload, 1, state)
 
     default:
       throw new Error(`Unknown action.type: ${action.type}`)
