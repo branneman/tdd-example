@@ -10,6 +10,11 @@ function reducer(state, action) {
     case 'remove':
       return remove(action.payload, 1, state)
 
+    case 'toggle':
+      const newState = state.slice()
+      newState[action.payload].done = !newState[action.payload].done
+      return newState
+
     default:
       throw new Error(`Unknown action.type: ${action.type}`)
   }

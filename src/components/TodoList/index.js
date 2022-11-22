@@ -1,15 +1,26 @@
+import { sort } from 'util/sort'
 import './index.css'
 
 export default function TodoList(props) {
   const { state, dispatch } = props
 
   const remove = (index) => () => dispatch({ type: 'remove', payload: index })
+  const toggle = (index) => () => dispatch({ type: 'toggle', payload: index })
+
+  const sortedState = sort(state)
 
   return (
     <ol className='todo__list'>
-      {state.map((item, index) => (
+      {sortedState.map((item, index) => (
         <li key={index} className='todo__item'>
-          <p data-testid='todoitem-name'>{item.name}</p>
+          <p
+            onClick={toggle(index)}
+            data-testid='todoitem-name'
+            todoitem-state={item.done ? 'done' : 'todo'}
+            className={item.done ? 'todo__item--done' : 'todo__item--todo'}
+          >
+            {item.name}
+          </p>
           <button
             onClick={remove(index)}
             className='todo__remove'

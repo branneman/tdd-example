@@ -19,7 +19,7 @@ describe('Removing a todo', () => {
   ]
 
   it('removes a todo item by clicking the delete button', async () => {
-    render(<App alternativeState={state} />)
+    render(<App initialState={state} />)
     const btn = await screen.queryAllByTestId('todoitem-delete')
     expect(btn.length).toBe(state.length)
 

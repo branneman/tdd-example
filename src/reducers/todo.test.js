@@ -51,4 +51,23 @@ describe('todo reducer', () => {
       ])
     })
   })
+
+  describe('action: toggle', () => {
+    it('toggles from todo to done', () => {
+      const state = [
+        { name: 'foo', done: false },
+        { name: 'bar', done: false },
+        { name: 'baz', done: false, really: 'yes' },
+      ]
+      const action = { type: 'toggle', payload: 1 }
+
+      const newState = reducer(state, action)
+
+      expect(newState).toStrictEqual([
+        { name: 'foo', done: false },
+        { name: 'bar', done: true },
+        { name: 'baz', done: false, really: 'yes' },
+      ])
+    })
+  })
 })

@@ -8,6 +8,10 @@
   margin-bottom: 1em;
   list-style: none;
   font-size: 1.4em;
+  cursor: pointer;
+}
+.todo__item--done {
+  text-decoration: line-through;
 }
 .todo__item p {
   flex-grow: 1;
